@@ -1,0 +1,5 @@
+Optimization Results:
+Raw Accuracy: 9/12
+Optimized Accuracy: 10/12
+Improvement: +1 example correctly classified on training set.
+Optimized module: Router (BootstrapFewShot)

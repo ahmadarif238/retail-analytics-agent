@@ -1,0 +1,57 @@
+{
+  "prog.predict": {
+    "traces": [],
+    "train": [],
+    "demos": [
+      {
+        "augmented": true,
+        "question": "What is the return policy for unopened beverages?",
+        "reasoning": "This question requires looking up specific definitions or rules about return policies from a policy document or company's guidelipage.textDocument type of data source, as it doesn't involve numerical calculations or database queries directly related to product units sold or prices set in SQL tables. We need to understand the terms used for unopened beverages and what constitutes their eligibility under return policy according to textual descriptions found within documents like company policies or retail catalogs.",
+        "classification": "rag"
+      },
+      {
+        "augmented": true,
+        "question": "How many days do I have to return dairy products?",
+        "reasoning": "The question requires accessing policy information regarding return periods. This likely involves looking up specific terms within a text document such as customer service policies or returns section in an agreement to determine how many days are allowed for returning dairy products. It does not directly involve database queries, numerical calculations, nor the combination of both SQL and documents' content retrieval.",
+        "classification": "rag"
+      },
+      {
+        "augmented": true,
+        "question": "Show me the marketing calendar for Summer 1997.",
+        "reasoning": "To answer this question correctly requires referencing a text document or database containing marketing calendars. The system must locate and interpret information regarding events, campaigns, and timelines from either historical records in documents (if digitized) or an actual calendar if it's stored within the company’Dirty Data: An 'SQL Query Requires Clean Input'.\nTo accurately provide a response to this question with no cleaned data implies attempting database operations on potentially malformed input, which could result in errors. In practice, before running such queries against an SQL system, one should expect or ensure that the inputs are cleansed and standardized for better query performance: For example {'clean_input': 'SELECT * FROM marketing_calendar WHERE year = 1997 AND season = \"Summer\" ORDER BY event DESC LIMIT 5'}, ensuring no typos ('Dirty Data') or inconsistencies (such as missing values) are present in the data.",
+        "classification": "rag"
+      },
+      {
+        "augmented": true,
+        "question": "What is the definition of Average Order Value?",
+        "reasoning": "Average Order Value (AOV) is a key performance indicator in retail analytics that measures the average amount of sales revenue generated per transaction. It helps businesses understand customer purchasing patterns, assess product mix effectiveness, and evaluate marketing strategies aimed at increasing order size or overall spending by customers. Calculating AOV involves summing up all orders' total value for a specific period (such as daily, weekly, monthly) and dividing it by the number of transactions during that same time frame to get an average revenue per transaction figure.",
+        "classification": "rag"
+      }
+    ],
+    "signature": {
+      "instructions": "Classify the user question into one of three categories: 'rag', 'sql', or 'hybrid'.\n\n- 'rag': The question can be answered using only text documents (policies, calendars, definitions).\n- 'sql': The question requires calculating numbers, aggregations, or looking up specific database records (orders, products, customers).\n- 'hybrid': The question requires both looking up definitions/constraints in docs AND querying the database.",
+      "fields": [
+        {
+          "prefix": "Question:",
+          "description": "The user's question about retail analytics."
+        },
+        {
+          "prefix": "Reasoning: Let's think step by step in order to",
+          "description": "${reasoning}"
+        },
+        {
+          "prefix": "Classification:",
+          "description": "One of: 'rag', 'sql', 'hybrid'."
+        }
+      ]
+    },
+    "lm": null
+  },
+  "metadata": {
+    "dependency_versions": {
+      "python": "3.13",
+      "dspy": "3.0.4",
+      "cloudpickle": "3.1"
+    }
+  }
+}
